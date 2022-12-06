@@ -1546,7 +1546,7 @@ class Doorbird extends IPSModule
     {
         $smartlock_value = $this->ReadAttributeString('SmartlockValue');
         $smartlock_id = $this->ReadAttributeInteger('SmartlockID');
-        if($smartlock_id > 0)
+        if($smartlock_id > 0 && IPS_VariableExists($smartlock_id))
         {
             $var_info = IPS_GetVariable($smartlock_id);
             $variable_type = $var_info['VariableType'];
